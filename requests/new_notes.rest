@@ -1,0 +1,9 @@
+POST http://localhost:3001/api/products 
+Content-Type: application/json
+
+{
+    "productName": "NOTEBOOK XPG XENIA XE I7 11800H",
+    "productPrice": 452990,
+    "productImg": "https://www.venex.com.ar/products_images/1649681641_notebook-xpg-xenia-xe-i7-11800h-1tb-nvme-32gb-rtx-3070-15.6-w10.jpg",
+    "stock": "5"
+}
