@@ -86,14 +86,6 @@ let products = [
         "stock": "3",
         "rebate": true
     },
-    {
-        "id": 11,
-        "productName": "NOTEBOOK XPG XENIA XE I7 11800H",
-        "productPrice": 452990,
-        "productImg": "https://www.venex.com.ar/products_images/1649681641_notebook-xpg-xenia-xe-i7-11800h-1tb-nvme-32gb-rtx-3070-15.6-w10.jpg",
-        "stock": "5",
-        "rebate": false
-    }
 ];
 
 app.get("/", (request, response) => {
@@ -101,7 +93,7 @@ app.get("/", (request, response) => {
 });
 
 app.get("/api/products", (request, response) => {
-  response.end(JSON.stringify(products));
+  response.json(products);
 });
 
 app.get("/api/products/:id", (request, response) => {
@@ -121,19 +113,20 @@ app.post("/api/products", (request, response) => {
 
   const ids = products.map((product) => product.id);
   const allIds = Math.max(...ids);
+  const result = allIds + 1;
 
-  const newPoduct = {
-    id: allIds + 1,
+  const newProduct = {
+    id: result.toString(),
     productName: product.productName,
     productPrice: Number(product.productPrice),
     productImg: product.productImg,
     stock: product.stock,
-    rebate: typeof product.rebate !== "undefined" ? product.important : false,
+    rebate: typeof product.rebate !== "undefined" ? product.rebate : false,
   };
 
-  products = [...products, newPoduct];
+  products = [...products, newProduct];
 
-  response.json(product);
+  response.status(201).json(newProduct);
 });
 
 const PORT = 3001;
