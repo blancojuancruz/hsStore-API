@@ -1,1 +1,1 @@
-GET http://localhost:3001/api/products
+GET http://localhost:3002/api/products
