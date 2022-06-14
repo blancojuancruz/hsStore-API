@@ -1,2 +1,7 @@
 PUT http://localhost:3002/api/products/62a89fb423a849d71be53d47
+
 Content-Type: application/json
+
+{
+
+}

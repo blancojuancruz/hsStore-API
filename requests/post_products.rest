@@ -1,7 +1,12 @@
 POST http://localhost:3002/api/products 
 Content-Type: application/json
 
-{  
+{
+  "productName": "",
+  "productPrice": "",
+  "productImg": "",
+  "stock": ,
+  "rebate": 
 }
 
 
