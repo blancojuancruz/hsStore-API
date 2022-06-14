@@ -2,11 +2,6 @@ POST http://localhost:3002/api/products
 Content-Type: application/json
 
 {  
-    "productName": "Pc AMD Ryzen 7 5700G 8GB SSD 240GB",
-    "productPrice": 87.990,
-    "productImg": "https://www.venex.com.ar/products_images/thumb/1638893960_pc-amd-ryzen-7-5700g-8gb-ssd-240gb.jpg",
-    "stock": 4,
-    "rebate": false
 }
 
 

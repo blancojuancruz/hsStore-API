@@ -16,9 +16,10 @@ app.get('/', (request, response) => {
 })
 
 app.get('/api/products', (request, response) => {
-  Product.find({}).then(products => {
-    response.json(products)
-  })
+  Product.find({})
+    .then(products => {
+      response.json(products)
+    })
 })
 
 app.get('/api/products/:id', (request, response, next) => {
@@ -78,7 +79,7 @@ app.post('/api/products', (request, response) => {
 app.use(notFound)
 app.use(handleError)
 
-const PORT = process.env.PORT || 3002
+const PORT = process.env.PORT
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`)
 })
